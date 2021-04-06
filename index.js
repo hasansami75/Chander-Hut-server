@@ -31,7 +31,6 @@ client.connect(err => {
     })
 
     app.get('/orders', (req, res) => {
-     // console.log(req.query.email);
       orderCollection.find({email: req.query.email})
       .toArray((err, items) => {
           res.send(items);
@@ -63,10 +62,6 @@ app.delete('/deleteEvent/:id', (req, res) => {
     .then( (result) => {
         res.send(result.deletedCount > 0);
     })
-    // const id = ObjectID(req.params.id);
-    //console.log(req.params.id);
-    // orderCollection.findOneAndDelete({_id: id})
-    // .then(documents => res.send(! ! documents.value));
 })
 
 });

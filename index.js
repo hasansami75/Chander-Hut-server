@@ -47,6 +47,10 @@ client.connect(err => {
       })
   })
 
+  app.get('/', (req, res) => {
+      res.send("hello from db, it's working");
+  })
+
   app.post('/addOrder', (req, res) => {
     const orderInformation = req.body;
     console.log('adding new product: ', orderInformation);
